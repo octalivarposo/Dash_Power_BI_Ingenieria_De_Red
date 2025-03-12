@@ -9,77 +9,36 @@
         body {
             background-color: black;
             color: white;
-            padding-top: 50px;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
         }
         .tablero-link {
             background-color: gray;
-            color: white;
+            color: blue;
             padding: 15px;
             border-radius: 8px;
             text-decoration: none;
             font-size: 20px;
-            display: block;
-            margin-bottom: 5px;
+            display: inline-block;
+            width: 80%;
+            max-width: 500px;
         }
         .descripcion {
+            margin-top: 10px;
             font-size: 16px;
             color: #ccc;
-            margin-bottom: 20px;
-        }
-        .form-control, .btn {
-            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container text-center">
-         <h2 class="mb-4">TABLEROS INGENIERIA DE RED</h2>
-         
-         <!-- Formulario para agregar nuevos enlaces -->
-         <form id="addLinkForm" class="mb-4">
-              <input type="text" id="boardName" class="form-control" placeholder="Nombre del Tablero" required>
-              <input type="url" id="boardURL" class="form-control" placeholder="URL del Tablero" required>
-              <input type="text" id="boardDescription" class="form-control" placeholder="Descripción del Tablero (opcional)">
-              <button type="submit" class="btn btn-primary w-100">Agregar Tablero</button>
-         </form>
-         
-         <!-- Contenedor de los enlaces -->
-         <div id="linksContainer">
-              <div class="mb-4">
-                  <a href="https://app.powerbi.com/links/TD9lyfwVOm?ctid=8d2f79c3-03e7-4dc9-92d3-1e6dbcbb791a&pbi_source=linkShare" target="_blank" class="tablero-link">Informe General de Red</a>
-                  <p class="descripcion">Información consolidada de la red de Media Commerce</p>
-              </div>
-         </div>
-    </div>
+    <h2 class="mb-4">TABLEROS INGENIERIA DE RED</h2>
     
-    <script>
-       document.getElementById('addLinkForm').addEventListener('submit', function(e){
-          e.preventDefault();
-          var name = document.getElementById('boardName').value;
-          var url = document.getElementById('boardURL').value;
-          var description = document.getElementById('boardDescription').value;
-          
-          if(name && url) {
-              var container = document.getElementById('linksContainer');
-              var linkDiv = document.createElement('div');
-              linkDiv.className = 'mb-4';
-              
-              var linkA = document.createElement('a');
-              linkA.href = url;
-              linkA.target = '_blank';
-              linkA.className = 'tablero-link';
-              linkA.textContent = name;
-              
-              var descriptionP = document.createElement('p');
-              descriptionP.className = 'descripcion';
-              descriptionP.textContent = description;
-              
-              linkDiv.appendChild(linkA);
-              linkDiv.appendChild(descriptionP);
-              container.appendChild(linkDiv);
-              
-              // Limpiar campos\n              document.getElementById('boardName').value = '';\n              document.getElementById('boardURL').value = '';\n              document.getElementById('boardDescription').value = '';\n          }\n       });\n    </script>\n    \n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>\n</body>\n</html>
+    <a href="https://app.powerbi.com/links/TD9lyfwVOm?ctid=8d2f79c3-03e7-4dc9-92d3-1e6dbcbb791a&pbi_source=linkShare" target="_blank" class="tablero-link">Informe General de Red</a>
+    <p class="descripcion">Información consolidada de la red de Media Commerce Por Planeación de Red</p>
+    
+</body>
+</html>
